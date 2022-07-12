@@ -1,6 +1,13 @@
 terraform {
   required_version = "~> 1.2.0"
 
+  required_providers {
+    openstack = {
+      source  = "terraform-provider-openstack/openstack"
+      version = "~> 1.35.0"
+    }
+  }
+
   backend "remote" {
     hostname     = "app.terraform.io"
     organization = "blackdevs"
@@ -29,23 +36,11 @@ locals {
 output "body" {
   value       = local.api_request
   sensitive   = false
-  description = "API request"
+  description = "API Request"
 }
 
 output "last" {
   value       = local.api_request["last"]
-  sensitive   = false
-  description = "API request"
-}
-
-output "buy" {
-  value       = local.api_request["buy"]
-  sensitive   = false
-  description = "API request"
-}
-
-output "sell" {
-  value       = local.api_request["sell"]
   sensitive   = false
   description = "API request"
 }
