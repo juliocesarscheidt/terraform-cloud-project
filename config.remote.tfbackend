@@ -1,0 +1,3 @@
+hostname     = "app.terraform.io"
+organization = "blackdevs"
+workspaces { name = "development" }
