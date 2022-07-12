@@ -10,6 +10,7 @@ terraform {
   # using config.remote.tfbackend
   # backend "remote" {}
 
+  # using local backend
   # backend "local" {
   # }
 }
@@ -21,26 +22,30 @@ data "http" "request" {
   }
 }
 
+locals {
+  api_request = jsondecode(data.http.request.body)
+}
+
 output "body" {
-  value       = jsondecode(data.http.request.body)
+  value       = local.api_request
   sensitive   = false
   description = "API request"
 }
 
 output "last" {
-  value       = jsondecode(data.http.request.body)["last"]
+  value       = local.api_request["last"]
   sensitive   = false
   description = "API request"
 }
 
 output "buy" {
-  value       = jsondecode(data.http.request.body)["buy"]
+  value       = local.api_request["buy"]
   sensitive   = false
   description = "API request"
 }
 
 output "sell" {
-  value       = jsondecode(data.http.request.body)["sell"]
+  value       = local.api_request["sell"]
   sensitive   = false
   description = "API request"
 }

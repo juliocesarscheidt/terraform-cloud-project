@@ -27,6 +27,10 @@ EOF
 
 terraform init -backend-config=config.remote.tfbackend
 
+terraform validate
+
+terraform fmt -write=true -recursive
+
 terraform plan
 terraform plan -out=tfplan
 
