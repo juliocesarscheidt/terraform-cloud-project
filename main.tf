@@ -15,7 +15,7 @@ terraform {
 }
 
 data "http" "request" {
-  url = "https://api.bitpreco.com/btc-brl/ticker"
+  url = var.api_uri
   request_headers = {
     Accept = "application/json"
   }

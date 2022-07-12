@@ -1,5 +1,9 @@
 
 
+[https://www.terraform.io/language/settings/backends/remote](https://www.terraform.io/language/settings/backends/remote)
+
+[https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http)
+
 ```bash
 
 terraform login
